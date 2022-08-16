@@ -14,6 +14,7 @@ body {
     --logo-color: red;
     --bg-content: #151515;
     --navbar-nav: 80px;
+    --button-color: #f77e0b;
 }
 
 /* Navbar and Sidebar */
@@ -121,6 +122,7 @@ body {
     right: 1px;
     border-radius: 50%;
     cursor: pointer;
+    transition: 1s ease all;
 }
 
 .profile-img {
@@ -193,7 +195,7 @@ body {
 }
 
 .featured-button {
-    background-color: #4dbf00;
+    background-color: var(--button-color);
     color: var(--text-color);
     text-transform: uppercase;
     outline: none;
@@ -207,6 +209,8 @@ body {
 .featured-button:hover {
     opacity: 0.8;
     cursor: pointer;
+    transition: 0.5s;
+    box-shadow: rgba(255, 255, 255, 0.5) 2px 0 15px 5px;
 }
 
 /* Movie List */
@@ -216,18 +220,20 @@ body {
 }
 
 .movie-list-title {
-    padding-bottom: 50px;
+    padding-bottom: 10px;
 }
 
 .movie-list-wrapper {
     position: relative;
+    overflow: hidden;
 }
 
 .movie-list {
     display: flex;
     align-items: center;
-    height: 300px;
-
+    height: 400px;
+    transform: translateX(0);
+    transition: all 0.5s ease-in-out;
 }
 
 .movie-list-item {
@@ -255,38 +261,38 @@ body {
     width: 230px;
     height: 320px;
     object-fit: cover;
-
+    border-radius: 10px;
 }
 
 /* Cần tối ưu content giảm với size img */
 .movie-list-item-title {
     background-color: #333;
-    padding: 0 10px;
+    padding: 5px 5px;
     font-size: 16px;
     font-weight: bold;
     position: absolute;
     top: 10%;
-    left: 20px;
+    left: 10%;
     opacity: 0;
     transition: 0.5s all ease-in-out;
 }
 
 .movie-list-item-desc {
     background-color: #333;
-    padding: 0 10px;
+    padding: 5px 5px;
     font-size: 12px;
+    line-height: 20px;
     position: absolute;
-    text-align: justify;
-    top: 20%;
-    left: 0;
-    /* width: auto; */
+    /* text-align: justify; */
+    top: 25%;
+    left: 10%;
     opacity: 0;
     transition: 0.5s all ease-in-out;
 }
 
 .movie-list-item-button {
     padding: 10px;
-    background-color: #4dbf00;
+    background-color: var(--button-color);
     color: var(--text-color);
     border-radius: 20px;
     font-size: 16px;
@@ -303,15 +309,96 @@ body {
 .movie-list-item .movie-list-item-button:hover {
     transition: 0.5s;
     opacity: 0.8;
-    box-shadow: rgba(255, 255, 255, 0.5) 0px 5px 15px;
+    box-shadow: rgba(255, 255, 255, 0.5) 2px 0 15px 5px;
 }
 
 .arrow-right {
     font-size: 120px;
     position: absolute;
-    top: 90px;
+    top: 140px;
     right: 0;
     color: lightgrey;
     opacity: 0.5;
     cursor: pointer;
+}
+
+/* Footer */
+/*  */
+#footer {
+    padding: 64px 16px;
+    text-align: center;
+    background-color: var(--main-color);
+}
+
+#footer .list-socials {
+    font-size: 25px;
+}
+
+#footer .list-socials a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0 6px;
+
+}
+
+#footer .copy-right a:hover,
+#footer .list-socials a:hover {
+    opacity: 0.7;
+}
+
+#footer .copy-right {
+    margin-top: 15px;
+    color: var(--text-color);
+}
+
+#footer .copy-right a {
+    color: var(--text-color);
+}
+
+/* Change state light */
+
+.container.active {
+    background-color: var(--text-color);
+}
+
+.movie-list-title.active {
+    color: var(--main-color);
+}
+
+.navbar-container.active {
+    background-color: var(--text-color);
+    color: var(--main-color);
+}
+
+.sidebar.active {
+    background-color: var(--text-color);
+}
+
+.left-menu-icon.active {
+    color: var(--main-color);
+}
+
+#footer.active {
+    padding: 64px 16px;
+    text-align: center;
+    background-color: var(--text-color);
+}
+
+#footer .list-socials.active a {
+    color: var(--main-color);
+
+}
+
+#footer .copy-right.active {
+    margin-top: 15px;
+    color: var(--main-color);
+}
+
+.toggle.active {
+    background-color: var(--main-color);
+}
+
+.toggle-circle.active {
+    background-color: var(--text-color);
+    transform: translateX(-18px);
 }
