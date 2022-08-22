@@ -11,7 +11,7 @@ arrows.forEach((arrow, index) => {
     arrow.addEventListener('click', () => {
         const ration = Math.floor(window.innerWidth / 320) //img discrease follow width / size img
         clickCounter++;
-        if ((itemNumber - (5 + clickCounter) + (5 - ration)) >= 0) {
+        if ((itemNumber - (5 + clickCounter) + (4 - ration)) >= 0) {
             movieList[index].style.transform = `
                 translateX(${movieList[index].computedStyleMap().get('transform')[0].x.value - 400}px)`
         } else {
